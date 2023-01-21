@@ -1,4 +1,8 @@
 "use client";
+import "@fontsource/nunito";
+import "@fontsource/raleway";
+import "@fontsource/open-sans";
+
 import type { ReactNode } from "react";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "@/assets/theme";
