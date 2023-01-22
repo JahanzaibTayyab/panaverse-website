@@ -1,10 +1,9 @@
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-export default function Home() {
+import Home from "@/components/home";
+
+export default function App() {
   return (
-    <main>
-      <Navbar />
-      <Footer />
-    </main>
+    <>
+      <Home />
+    </>
   );
 }

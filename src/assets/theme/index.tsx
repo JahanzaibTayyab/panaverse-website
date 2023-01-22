@@ -6,6 +6,16 @@ const config: ThemeConfig = {
 };
 
 const theme = extendTheme({
+  styles: {
+    global: (props: any) => ({
+      "html, body": {
+        minHeight: "100vh",
+        margin: 0,
+        display: "flex",
+        flexDirection: "column",
+      },
+    }),
+  },
   colors: {
     yellow: {
       50: "#fff7da",

@@ -22,6 +22,7 @@ const NavBar = () => {
   return (
     <Box
       as="nav"
+      role="navigation"
       bg="bg-surface"
       boxShadow={useColorModeValue("md", "md-dark")}
     >
