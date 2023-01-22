@@ -15,7 +15,7 @@ export const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Web3.0",
-    href: "/web3.0",
+    href: "/web3",
   },
   {
     label: "More",
