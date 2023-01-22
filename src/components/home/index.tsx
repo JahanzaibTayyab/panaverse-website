@@ -23,6 +23,7 @@ import heroDot from "@/assets/images/hero-1-dot-2.png";
 import shape3 from "@/assets/images/shape-03.png";
 import heroDots from "@/assets/images/hero-1-dot.png";
 import imageCode from "@/assets/images/imageCode.png";
+import CourseStatics from "./courseStatics";
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
@@ -34,11 +35,11 @@ const Home = (props: FlexProps) => {
     <>
       <Flex as="main" role="main" direction="column" flex="1" {...props}>
         <Container flex="1" maxW={"full"} padding={0}>
-          <Box bg={"#EDEEF3"} minH="container.sm">
+          <Box bg={"#EDEEF3"} minH="container.sm" position="relative">
             <Box
               position={"absolute"}
               left={0}
-              top="30%"
+              top="40%"
               display={{ base: "none", lg: "block" }}
             >
               <Image src={shape3} alt="shape" />
@@ -161,6 +162,7 @@ const Home = (props: FlexProps) => {
               </Stack>
             </SimpleGrid>
           </Box>
+          <CourseStatics />
         </Container>
       </Flex>
       <Footer />
