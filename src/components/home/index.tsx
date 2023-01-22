@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -23,6 +24,10 @@ import heroDot from "@/assets/images/hero-1-dot-2.png";
 import shape3 from "@/assets/images/shape-03.png";
 import heroDots from "@/assets/images/hero-1-dot.png";
 import imageCode from "@/assets/images/imageCode.png";
+import CourseStatics from "./courseStatics";
+import ShortInfo from "./shortDescripation";
+import EventAndFeedback from "./eventAndFeedback";
+import { TitleText } from "../customText";
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
@@ -34,11 +39,11 @@ const Home = (props: FlexProps) => {
     <>
       <Flex as="main" role="main" direction="column" flex="1" {...props}>
         <Container flex="1" maxW={"full"} padding={0}>
-          <Box bg={"#EDEEF3"} minH="container.sm">
+          <Box bg={"#EDEEF3"} minH="container.sm" position="relative">
             <Box
               position={"absolute"}
               left={0}
-              top="30%"
+              top="40%"
               display={{ base: "none", lg: "block" }}
             >
               <Image src={shape3} alt="shape" />
@@ -162,9 +167,48 @@ const Home = (props: FlexProps) => {
             </SimpleGrid>
           </Box>
         </Container>
+        <CourseStatics />
+        <ShortInfo />
+        <Container pt={30} maxW="4xl" overflow={"hidden"}>
+          <TitleText
+            title={
+              <Heading
+                size="2xl"
+                textAlign={"center"}
+                letterSpacing={1.0}
+                lineHeight={"55px"}
+              >
+                The Program in a Nutshell <br /> Earn While You Learn
+              </Heading>
+            }
+          />
+          <ChakraBox
+            pt={10}
+            pb={50}
+            variants={{
+              hidden: {},
+              show: {},
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+          >
+            <ChakraBox variants={fadeIn("up", "tween", 0.2, 1)}>
+              <Text fontSize={"lg"} textAlign="center" color="#53545b">
+                In this brand-new type of curriculum, students will learn how to
+                make money and boost exports in the classroom and will begin
+                doing so within six months of the program's beginning. It
+                resembles a cross between a corporate venture and an educational
+                project.
+              </Text>
+            </ChakraBox>
+          </ChakraBox>
+        </Container>
+        <EventAndFeedback />
       </Flex>
       <Footer />
     </>
   );
 };
+
 export default Home;

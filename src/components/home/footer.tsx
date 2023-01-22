@@ -81,6 +81,7 @@ const Footer = (props: BoxProps) => {
       as="footer"
       role="contentinfo"
       pt={5}
+      mb={{ sm: "-1px", lg: "0" }}
       bg={useColorModeValue("customBlack.900", "gray.900")}
       color={useColorModeValue("#a2a2a2", "gray.200")}
       {...props}
@@ -98,7 +99,7 @@ const Footer = (props: BoxProps) => {
               It is community of Web 3 and Metaverse developers, designers,
               trainers, startup founders and service providers.
             </Text>
-            <Stack direction={"row"} spacing={6}>
+            <Stack direction={"row"} spacing={6} pb={2}>
               <SocialButton
                 label={"Twitter"}
                 href={"https://twitter.com/Panaverse_edu"}
