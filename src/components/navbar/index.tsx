@@ -29,7 +29,7 @@ const NavBar = () => {
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"70px"}
+        minH={"90px"}
         px={{ base: 4 }}
         align={"center"}
       >
