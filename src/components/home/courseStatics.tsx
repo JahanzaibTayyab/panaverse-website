@@ -1,20 +1,19 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
 import {
   Container,
   chakra,
   Flex,
-  Box,
   SimpleGrid,
-  Stack,
   Heading,
   Text,
-  Button,
   Card,
   CardBody,
   shouldForwardProp,
 } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
+import { TitleText } from "../customText";
 import { fadeIn } from "@/utils";
 import studentIcon from "@/assets/images/studentIcon.png";
 import classesIcon from "@/assets/images/classes.png";
@@ -27,16 +26,27 @@ const ChakraBox = chakra(motion.div, {
 
 const courseStatics = () => {
   return (
-    <ChakraBox
-      variants={{
-        hidden: {},
-        show: {},
-      }}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-    >
-      <Container pt={120} pb={30} maxW="container.xl">
+    <Container pt={120} pb={30} maxW="container.xl" overflow={"hidden"}>
+      <ChakraBox
+        variants={{
+          hidden: {},
+          show: {},
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+      >
+        <TitleText
+          title={
+            <Heading size="2xl" textAlign={"center"}>
+              We Are Proud
+            </Heading>
+          }
+        />
+        <Text textAlign={"center"} py={5} color="#53545b">
+          You don't have to struggle alone, you've got our assistance and help.
+        </Text>
+
         <ChakraBox variants={fadeIn("up", "tween", 0.2, 1)}>
           <SimpleGrid
             templateColumns={{ sm: "1fr 1fr", md: "1fr 1fr 1fr 1fr" }}
@@ -47,7 +57,7 @@ const courseStatics = () => {
                 <Card
                   key={child.label + index}
                   boxShadow={"none"}
-                  bg="#f6f8fb"
+                  bg={child.backgroundColor}
                   padding={"50px 30px"}
                   justify="center"
                   alignItems={"center"}
@@ -61,12 +71,12 @@ const courseStatics = () => {
                         height={60}
                       />
                     </Flex>
-                    <Heading textAlign={"center"} mb={1}>
+                    <Heading textAlign={"center"} mb={1} color="white">
                       {child.number}
                     </Heading>
                     <Text
                       textAlign={"center"}
-                      color="#575757"
+                      color="whiteAlpha.800"
                       fontWeight={"500"}
                     >
                       {child.label}
@@ -77,8 +87,8 @@ const courseStatics = () => {
             })}
           </SimpleGrid>
         </ChakraBox>
-      </Container>
-    </ChakraBox>
+      </ChakraBox>
+    </Container>
   );
 };
 const cardInfo = [
@@ -86,21 +96,25 @@ const cardInfo = [
     number: "5,000",
     label: "Students Enrolled",
     url: studentIcon,
+    backgroundColor: "#2d69f0",
   },
   {
     number: "1,000",
     label: "Class Completed",
     url: classesIcon,
+    backgroundColor: "#dd246e",
   },
   {
     number: "100+",
     label: "Skilled Instructors",
     url: teacherIcon,
+    backgroundColor: "#8007e6",
   },
   {
     number: "1,000",
     label: "Students Enrolled",
     url: studentIcon,
+    backgroundColor: "#0cae74",
   },
 ];
 export default courseStatics;
