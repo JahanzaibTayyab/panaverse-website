@@ -3,19 +3,22 @@ import { FooterNavItem } from "@/types/footer";
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: "About",
-    href: "#",
+    href: "/about",
   },
   {
     label: "Blog",
-    href: "#",
+    href: "/blog",
   },
   {
     label: "Community",
-    href: "#",
+    href: "/community",
+  },
+  {
+    label: "Web3.0",
+    href: "/web3.0",
   },
   {
     label: "More",
-    href: "#",
     children: [
       {
         label: "Useful Youtube videos",
@@ -37,49 +40,49 @@ export const NAV_ITEMS: Array<NavItem> = [
 export const FOOTER_COMPANY_NAV_ITEMS: Array<FooterNavItem> = [
   {
     label: "About us",
-    href: "#",
+    href: "/about",
   },
   {
     label: "Blog",
-    href: "#",
+    href: "/blog",
   },
   {
     label: "Instructors",
-    href: "#",
+    href: "/instructor",
   },
   {
     label: "Testimonials",
-    href: "#",
+    href: "/testimonials",
   },
   {
     label: "Build Career",
-    href: "#",
+    href: "/build-career",
   },
   {
     label: "Become Instructor",
-    href: "#",
+    href: "becomeInstructor",
   },
 ];
 
 export const FOOTER_SUPPORT_NAV_ITEMS: Array<FooterNavItem> = [
   {
     label: "Help Center",
-    href: "#",
+    href: "/help",
   },
   {
     label: "Terms of Service",
-    href: "#",
+    href: "/terms-service",
   },
   {
     label: "Legal",
-    href: "#",
+    href: "/legal",
   },
   {
     label: "Privacy Policy",
-    href: "#",
+    href: "/privacy",
   },
   {
     label: "Satus",
-    href: "#",
+    href: "/status",
   },
 ];
