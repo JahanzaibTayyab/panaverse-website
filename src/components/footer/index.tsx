@@ -42,9 +42,15 @@ const Footer = (props: BoxProps) => {
             borderRightWidth={{ base: 0, md: 1 }}
             borderColor="#373a3e"
             justify={{ sm: "start", md: "center" }}
-            alignItems={"start"}
+            alignItems={{ base: "center", md: "start" }}
           >
-            <Text pt={6} color="white" mr={{ base: 0, sm: 10 }} maxW={250}>
+            <Text
+              pt={6}
+              color="white"
+              mr={{ base: 0, sm: 10 }}
+              maxW={250}
+              textAlign={{ base: "center", md: "left" }}
+            >
               © Copyrighted and Designed by{" "}
               <Link color="blue.500" href="#">
                 Jahanzaib Tayab
@@ -71,7 +77,7 @@ const Footer = (props: BoxProps) => {
               </Heading>
             </Stack>
           </Stack>
-          <Stack spacing={8} alignItems="end">
+          <Stack spacing={8} alignItems={{ base: "center", md: "end" }}>
             <Link>
               <Text pt={6} fontSize={"sm"} textAlign={"center"} color="white">
                 Powered by
