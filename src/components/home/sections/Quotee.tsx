@@ -1,4 +1,4 @@
-import { Box, BoxProps, Img, Text } from "@chakra-ui/react";
+import { Box, BoxProps, Img, Text, Flex } from "@chakra-ui/react";
 import * as React from "react";
 
 interface Props extends BoxProps {
@@ -19,14 +19,14 @@ export const Quotee = (props: Props) => {
         h="16"
         rounded="full"
       />
-      <Box mt="3">
+      <Flex mt="3" direction={"column"} alignItems="center">
         <Text as="cite" fontStyle="normal" fontWeight="bold">
           {name}
         </Text>
         <Text fontSize="sm" color="gray.500">
           {jobTitle}
         </Text>
-      </Box>
+      </Flex>
     </Box>
   );
 };
