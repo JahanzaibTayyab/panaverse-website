@@ -24,7 +24,14 @@ import ZoomClass from "./sections/zoomClass";
 const Home = (props: FlexProps) => {
   return (
     <>
-      <Flex as="main" role="main" direction="column" flex="1" {...props}>
+      <Flex
+        as="main"
+        role="main"
+        direction="column"
+        flex="1"
+        {...props}
+        mt={90}
+      >
         <Banner />
         <CourseStatics />
         <ShortInfo />
