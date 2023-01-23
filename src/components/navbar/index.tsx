@@ -25,6 +25,11 @@ const NavBar = () => {
       role="navigation"
       bg="bg-surface"
       boxShadow={useColorModeValue("md", "md-dark")}
+      position="fixed"
+      top={0}
+      left={0}
+      zIndex={100}
+      width="full"
     >
       <Flex
         bg={useColorModeValue("white", "gray.800")}
