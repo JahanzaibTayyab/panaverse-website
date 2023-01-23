@@ -18,6 +18,7 @@ import MotionBox from "./motionBox";
 import { fadeIn, planetVariants } from "@/utils";
 import { AiOutlineFieldTime, AiOutlineArrowRight } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
+import Feedback from "./feedback";
 
 const eventAndFeedback = () => (
   <Box bg={"#EDEEF3"} position="relative" overflow="hidden">
@@ -114,8 +115,11 @@ const eventAndFeedback = () => (
           </Stack>
           <Stack alignItems={"start"}>
             <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
-              <Heading size="xl">Student's Feedback</Heading>
+              <Heading size="xl" mb={45}>
+                Student's Feedback
+              </Heading>
             </MotionBox>
+            <Feedback />
           </Stack>
         </SimpleGrid>
       </MotionBox>
