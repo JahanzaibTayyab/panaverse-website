@@ -11,18 +11,19 @@ import {
   Text,
   Button,
   Link,
+  Flex,
 } from "@chakra-ui/react";
 import MotionBox from "./motionBox";
 import { fadeIn, planetVariants } from "@/utils";
 import imageBackground from "@/assets/images/education-shape-05.png";
 import imageBackground2 from "@/assets/images/education-shape-03.png";
-import web from "@/assets/images/web.webp";
+import web from "@/assets/images/get-started.png";
 
 const shortInfo = () => (
   <Container
     pt={90}
     position={"relative"}
-    pb={50}
+    pb={10}
     overflow="hidden"
     maxW="container.xl"
   >
@@ -38,7 +39,7 @@ const shortInfo = () => (
       <Box
         position={"absolute"}
         left={0}
-        top="0%"
+        top="12%"
         display={{ base: "none", md: "block" }}
       >
         <Image src={imageBackground} alt="shape" />
@@ -54,11 +55,13 @@ const shortInfo = () => (
       <SimpleGrid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} spacing={12}>
         <MotionBox
           variants={planetVariants("left")}
-          borderRadius={"40px 4px 40px 4px"}
-          objectFit={"cover"}
           overflow="hidden"
+          position={"relative"}
+          mt={-10}
         >
-          <Image src={web} alt="web3" />
+          <Flex objectFit="cover" justify={"center"} alignItems="center">
+            <Image src={web} alt="web3" width={500} />
+          </Flex>
         </MotionBox>
         <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
           <Stack alignItems={"start"}>
