@@ -2,31 +2,14 @@
 "use client";
 import Image from "next/image";
 import NextLink from "next/link";
-import {
-  Container,
-  chakra,
-  Box,
-  SimpleGrid,
-  Stack,
-  Heading,
-  Text,
-  Button,
-  Link,
-  shouldForwardProp,
-} from "@chakra-ui/react";
-import { motion, isValidMotionProp } from "framer-motion";
+import { Container, Box, SimpleGrid, Stack, Heading } from "@chakra-ui/react";
+import MotionBox from "./motionBox";
 import { fadeIn, planetVariants } from "@/utils";
-import web3 from "@/assets/images/web3.png";
-
-const ChakraBox = chakra(motion.div, {
-  shouldForwardProp: (prop) =>
-    isValidMotionProp(prop) || shouldForwardProp(prop),
-});
 
 const eventAndFeedback = () => (
   <Box bg={"#EDEEF3"} minH="container.sm" position="relative" overflow="hidden">
     <Container pt={100} pb={90} maxW="container.xl">
-      <ChakraBox
+      <MotionBox
         variants={{
           hidden: {},
           show: {},
@@ -36,16 +19,16 @@ const eventAndFeedback = () => (
         viewport={{ once: false, amount: 0.25 }}
       >
         <SimpleGrid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} spacing={12}>
-          <ChakraBox variants={planetVariants("left")} overflow="hidden">
+          <MotionBox variants={planetVariants("left")} overflow="hidden">
             <Heading size="xl">Upcoming Events</Heading>
-          </ChakraBox>
-          <ChakraBox variants={fadeIn("left", "tween", 0.2, 1)}>
+          </MotionBox>
+          <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
             <Stack alignItems={"start"}>
               <Heading size="xl">Student's Feedback</Heading>
             </Stack>
-          </ChakraBox>
+          </MotionBox>
         </SimpleGrid>
-      </ChakraBox>
+      </MotionBox>
     </Container>
   </Box>
 );

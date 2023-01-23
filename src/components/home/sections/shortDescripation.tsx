@@ -4,7 +4,6 @@ import Image from "next/image";
 import NextLink from "next/link";
 import {
   Container,
-  chakra,
   Box,
   SimpleGrid,
   Stack,
@@ -12,18 +11,12 @@ import {
   Text,
   Button,
   Link,
-  shouldForwardProp,
 } from "@chakra-ui/react";
-import { motion, isValidMotionProp } from "framer-motion";
+import MotionBox from "./motionBox";
 import { fadeIn, planetVariants } from "@/utils";
 import imageBackground from "@/assets/images/education-shape-05.png";
 import imageBackground2 from "@/assets/images/education-shape-03.png";
-import web3 from "@/assets/images/web3.png";
-
-const ChakraBox = chakra(motion.div, {
-  shouldForwardProp: (prop) =>
-    isValidMotionProp(prop) || shouldForwardProp(prop),
-});
+import web from "@/assets/images/web.webp";
 
 const shortInfo = () => (
   <Container
@@ -33,7 +26,7 @@ const shortInfo = () => (
     overflow="hidden"
     maxW="container.xl"
   >
-    <ChakraBox
+    <MotionBox
       variants={{
         hidden: {},
         show: {},
@@ -45,7 +38,7 @@ const shortInfo = () => (
       <Box
         position={"absolute"}
         left={0}
-        top="-2%"
+        top="0%"
         display={{ base: "none", md: "block" }}
       >
         <Image src={imageBackground} alt="shape" />
@@ -59,18 +52,20 @@ const shortInfo = () => (
         <Image src={imageBackground2} alt="shape" />
       </Box>
       <SimpleGrid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} spacing={12}>
-        <ChakraBox
+        <MotionBox
           variants={planetVariants("left")}
           borderRadius={"40px 4px 40px 4px"}
           objectFit={"cover"}
           overflow="hidden"
         >
-          <Image src={web3} alt="web3" />
-        </ChakraBox>
-        <ChakraBox variants={fadeIn("left", "tween", 0.2, 1)}>
+          <Image src={web} alt="web3" />
+        </MotionBox>
+        <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
           <Stack alignItems={"start"}>
-            <Heading size="2xl">What is Web 3.0? </Heading>
-            <Text color="#575757" lineHeight={"26px"}>
+            <Heading size="xl">
+              What is Web <span style={{ color: "#145CEB" }}> 3.0 </span>
+            </Heading>
+            <Text color="#575757" lineHeight={"26px"} pt={5}>
               Web 3.0 has the potential to change the internet as we know it
               forever. You're still early in catching the trend and building
               your first blockchain application, acquiring the skills to get a
@@ -83,7 +78,11 @@ const shortInfo = () => (
               internet. Web3 is built on peer-to-peer networks of computers that
               talk to each other without middlemen.
             </Text>
-            <Box pt={5}>
+            <MotionBox
+              pt={5}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Link
                 as={NextLink}
                 href={"/web3"}
@@ -103,11 +102,11 @@ const shortInfo = () => (
                   Read more
                 </Button>
               </Link>
-            </Box>
+            </MotionBox>
           </Stack>
-        </ChakraBox>
+        </MotionBox>
       </SimpleGrid>
-    </ChakraBox>
+    </MotionBox>
   </Container>
 );
 

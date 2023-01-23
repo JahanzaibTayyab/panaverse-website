@@ -3,31 +3,24 @@
 import Image from "next/image";
 import {
   Container,
-  chakra,
   Flex,
   SimpleGrid,
   Heading,
   Text,
   Card,
   CardBody,
-  shouldForwardProp,
 } from "@chakra-ui/react";
-import { motion, isValidMotionProp } from "framer-motion";
-import { TitleText } from "../customText";
+import MotionBox from "./motionBox";
+import { TitleText } from "../../customText";
 import { fadeIn } from "@/utils";
 import studentIcon from "@/assets/images/studentIcon.png";
 import classesIcon from "@/assets/images/classes.png";
 import teacherIcon from "@/assets/images/teacher.png";
 
-const ChakraBox = chakra(motion.div, {
-  shouldForwardProp: (prop) =>
-    isValidMotionProp(prop) || shouldForwardProp(prop),
-});
-
 const courseStatics = () => {
   return (
     <Container pt={120} pb={30} maxW="container.xl" overflow={"hidden"}>
-      <ChakraBox
+      <MotionBox
         variants={{
           hidden: {},
           show: {},
@@ -39,7 +32,7 @@ const courseStatics = () => {
         <TitleText
           title={
             <Heading size="2xl" textAlign={"center"}>
-              We Are Proud
+              We Are <span style={{ color: "#145CEB" }}> Proud </span>
             </Heading>
           }
         />
@@ -47,7 +40,7 @@ const courseStatics = () => {
           You don't have to struggle alone, you've got our assistance and help.
         </Text>
 
-        <ChakraBox variants={fadeIn("up", "tween", 0.2, 1)}>
+        <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
           <SimpleGrid
             templateColumns={{ sm: "1fr 1fr", md: "1fr 1fr 1fr 1fr" }}
             spacing={8}
@@ -86,8 +79,8 @@ const courseStatics = () => {
               );
             })}
           </SimpleGrid>
-        </ChakraBox>
-      </ChakraBox>
+        </MotionBox>
+      </MotionBox>
     </Container>
   );
 };
