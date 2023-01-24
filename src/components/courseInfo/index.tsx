@@ -153,7 +153,7 @@ const CourseInfo = (props: FlexProps) => {
                   return (
                     <Link
                       as={NextLink}
-                      href={"#"}
+                      href={"/web3/quarter1"}
                       key={quarter.title}
                       textDecoration="none"
                       transition="0.3s ease-in-out"
