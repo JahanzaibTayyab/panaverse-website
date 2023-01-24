@@ -44,7 +44,7 @@ const QuarterOneInfo = (props: FlexProps) => {
           }}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }}
         >
           <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
             <Flex justify="center" alignItems={"center"} direction="column">
@@ -70,7 +70,7 @@ const QuarterOneInfo = (props: FlexProps) => {
           }}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }}
         >
           <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
             <Heading size="md" mt={5}>
@@ -94,7 +94,7 @@ const QuarterOneInfo = (props: FlexProps) => {
           }}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }}
         >
           <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
             <Accordion defaultIndex={[0]} allowMultiple>
@@ -603,7 +603,7 @@ const QuarterOneInfo = (props: FlexProps) => {
           }}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.25 }}
         >
           <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
             <Heading size="md" mt={5}>
