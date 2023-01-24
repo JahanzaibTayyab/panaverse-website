@@ -21,6 +21,8 @@ import heroDots from "@/assets/images/hero-1-dot.png";
 import MotionBox from "../home/sections/motionBox";
 import { fadeIn } from "@/utils";
 import ExtraInfo from "./extraInfo";
+import AutoPlay from "./slider";
+import { courseInfo } from "@/utils/data";
 
 const CourseInfo = (props: FlexProps) => {
   return (
@@ -79,15 +81,7 @@ const CourseInfo = (props: FlexProps) => {
                 the Next Generation of the Internet.
               </Text>
               <Text fontSize={"md"} pt={5} lineHeight="30px" textAlign="center">
-                This curriculum is intended for beginners who want to learn
-                software development from the ground up. The first two quarters
-                are shared by all specialties and are dedicated to studying
-                Object-Oriented Programming and cutting-edge Full-Stack Web 2.0
-                development. It is going to be a fifteen-month-long hybrid
-                program that includes both onsite and online classes and is
-                divided into five quarters of 13 weeks each. The emphasis will
-                be on hands-on learning by educating students to produce
-                projects.
+                {courseInfo.ProgramOfStudies}
               </Text>
             </Flex>
           </Container>
@@ -155,12 +149,12 @@ const CourseInfo = (props: FlexProps) => {
                 spacing={8}
                 mb={50}
               >
-                {cardInfo.map((child, index) => {
+                {courseInfo.CoreCourses.quarters.map((quarter) => {
                   return (
                     <Link
                       as={NextLink}
                       href={"#"}
-                      key={child.quarter}
+                      key={quarter.title}
                       textDecoration="none"
                       transition="0.3s ease-in-out"
                       _hover={{
@@ -169,9 +163,8 @@ const CourseInfo = (props: FlexProps) => {
                       }}
                     >
                       <Card
-                        key={child.label + index}
                         boxShadow={"md"}
-                        bg={child.backgroundColor}
+                        bg={quarter.backgroundColor}
                         padding={"50px 30px"}
                         justify="center"
                         alignItems={"center"}
@@ -179,15 +172,15 @@ const CourseInfo = (props: FlexProps) => {
                       >
                         <CardBody padding={0}>
                           <Heading textAlign={"center"} mb={2} color="white">
-                            {child.quarter}
+                            {quarter.title}
                           </Heading>
                           <Text
                             pt={5}
                             textAlign={"center"}
-                            color="whiteAlpha.800"
+                            color="whiteAlpha.900"
                             fontWeight={"500"}
                           >
-                            {child.label}
+                            {quarter.course}
                           </Text>
                         </CardBody>
                       </Card>
@@ -210,21 +203,15 @@ const CourseInfo = (props: FlexProps) => {
           <Container maxW="7xl">
             <Heading size="lg">Specialized Tracks</Heading>
             <Text mb={10} mt={3}>
-              After completing the first two quarters the participants will
-              select one or more specializations consisting of two courses each:
+              {courseInfo.SpecializedTracks.info}
             </Text>
             <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
               <Flex alignItems={"center"} direction="column">
                 <Heading size="lg">
-                  Web 3.0 (Blockchain) and Metaverse Specialization
+                  {courseInfo.SpecializedTracks.blockChainTrack.title}
                 </Heading>
                 <Text mb={10} mt={3}>
-                  This Web 3.0 and Metaverse specialization focuses on
-                  developing full-stack Web 3.0 and Metaverse experiences for
-                  the next generation of the internet by specializing in
-                  building worlds that merge the best of cutting-edge
-                  decentralized distributed blockchains with 3D metaverse client
-                  experiences.
+                  {courseInfo.SpecializedTracks.blockChainTrack.description}
                 </Text>
               </Flex>
               <SimpleGrid
@@ -235,45 +222,46 @@ const CourseInfo = (props: FlexProps) => {
                 spacing={8}
                 mb={50}
               >
-                {blockChainCardInfo.map((child, index) => {
-                  return (
-                    <Link
-                      as={NextLink}
-                      href={"#"}
-                      key={child.quarter}
-                      textDecoration="none"
-                      transition="0.3s ease-in-out"
-                      _hover={{
-                        transform: "scale(1.05)",
-                        textDecoration: "none",
-                      }}
-                    >
-                      <Card
-                        key={child.label + index}
-                        boxShadow={"md"}
-                        bg={child.backgroundColor}
-                        padding={"50px 30px"}
-                        justify="center"
-                        alignItems={"center"}
-                        h="full"
+                {courseInfo.SpecializedTracks.blockChainTrack.quarters.map(
+                  (child) => {
+                    return (
+                      <Link
+                        as={NextLink}
+                        href={"#"}
+                        key={child.title}
+                        textDecoration="none"
+                        transition="0.3s ease-in-out"
+                        _hover={{
+                          transform: "scale(1.05)",
+                          textDecoration: "none",
+                        }}
                       >
-                        <CardBody padding={0}>
-                          <Heading textAlign={"center"} mb={2} color="white">
-                            {child.quarter}
-                          </Heading>
-                          <Text
-                            pt={5}
-                            textAlign={"center"}
-                            color="whiteAlpha.800"
-                            fontWeight={"500"}
-                          >
-                            {child.label}
-                          </Text>
-                        </CardBody>
-                      </Card>
-                    </Link>
-                  );
-                })}
+                        <Card
+                          boxShadow={"md"}
+                          bg={child.backgroundColor}
+                          padding={"50px 30px"}
+                          justify="center"
+                          alignItems={"center"}
+                          h="full"
+                        >
+                          <CardBody padding={0}>
+                            <Heading textAlign={"center"} mb={2} color="white">
+                              {child.title}
+                            </Heading>
+                            <Text
+                              pt={5}
+                              textAlign={"center"}
+                              color="whiteAlpha.900"
+                              fontWeight={"500"}
+                            >
+                              {child.course}
+                            </Text>
+                          </CardBody>
+                        </Card>
+                      </Link>
+                    );
+                  }
+                )}
               </SimpleGrid>
             </MotionBox>
             <MotionBox
@@ -288,13 +276,10 @@ const CourseInfo = (props: FlexProps) => {
               <MotionBox variants={fadeIn("up", "tween", 0.8, 1)}>
                 <Flex alignItems={"center"} direction="column">
                   <Heading size="lg">
-                    Artificial Intelligence (AI) and Deep Learning
-                    Specialization
+                    {courseInfo.SpecializedTracks.AITrack.title}
                   </Heading>
                   <Text mb={10} mt={3}>
-                    The AI and Deep Learning specialization focuses on building
-                    and deploying intelligent APIs using OpenAI models and
-                    building custom Deep Learning Tensorflow models.
+                    {courseInfo.SpecializedTracks.AITrack.description}
                   </Text>
                 </Flex>
                 <SimpleGrid
@@ -305,45 +290,50 @@ const CourseInfo = (props: FlexProps) => {
                   spacing={8}
                   mb={50}
                 >
-                  {aiCardInfo.map((child, index) => {
-                    return (
-                      <Link
-                        as={NextLink}
-                        href={"#"}
-                        key={child.quarter}
-                        textDecoration="none"
-                        transition="0.3s ease-in-out"
-                        _hover={{
-                          transform: "scale(1.05)",
-                          textDecoration: "none",
-                        }}
-                      >
-                        <Card
-                          key={child.label + index}
-                          boxShadow={"md"}
-                          bg={child.backgroundColor}
-                          padding={"50px 30px"}
-                          justify="center"
-                          alignItems={"center"}
-                          h="full"
+                  {courseInfo.SpecializedTracks.AITrack.quarters.map(
+                    (child) => {
+                      return (
+                        <Link
+                          as={NextLink}
+                          href={"#"}
+                          key={child.title}
+                          textDecoration="none"
+                          transition="0.3s ease-in-out"
+                          _hover={{
+                            transform: "scale(1.05)",
+                            textDecoration: "none",
+                          }}
                         >
-                          <CardBody padding={0}>
-                            <Heading textAlign={"center"} mb={2} color="white">
-                              {child.quarter}
-                            </Heading>
-                            <Text
-                              pt={5}
-                              textAlign={"center"}
-                              color="whiteAlpha.800"
-                              fontWeight={"500"}
-                            >
-                              {child.label}
-                            </Text>
-                          </CardBody>
-                        </Card>
-                      </Link>
-                    );
-                  })}
+                          <Card
+                            boxShadow={"md"}
+                            bg={child.backgroundColor}
+                            padding={"50px 30px"}
+                            justify="center"
+                            alignItems={"center"}
+                            h="full"
+                          >
+                            <CardBody padding={0}>
+                              <Heading
+                                textAlign={"center"}
+                                mb={2}
+                                color="white"
+                              >
+                                {child.title}
+                              </Heading>
+                              <Text
+                                pt={5}
+                                textAlign={"center"}
+                                color="whiteAlpha.800"
+                                fontWeight={"500"}
+                              >
+                                {child.course}
+                              </Text>
+                            </CardBody>
+                          </Card>
+                        </Link>
+                      );
+                    }
+                  )}
                 </SimpleGrid>
               </MotionBox>
             </MotionBox>
@@ -359,12 +349,10 @@ const CourseInfo = (props: FlexProps) => {
               <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
                 <Flex alignItems={"center"} direction="column">
                   <Heading size="lg">
-                    Ambient Computing and IoT Specialization
+                    {courseInfo.SpecializedTracks.cloudTrack.title}
                   </Heading>
                   <Text mb={10} mt={3}>
-                    The Ambient Computing and IoT Specialization focuses on
-                    building Smart Homes, Offices, Factories, and Cities using
-                    Voice computing, Matter, and Embedded Devices.
+                    {courseInfo.SpecializedTracks.cloudTrack.description}
                   </Text>
                 </Flex>
                 <SimpleGrid
@@ -375,45 +363,123 @@ const CourseInfo = (props: FlexProps) => {
                   spacing={8}
                   mb={50}
                 >
-                  {iotCardInfo.map((child, index) => {
-                    return (
-                      <Link
-                        as={NextLink}
-                        href={"#"}
-                        key={child.quarter}
-                        textDecoration="none"
-                        transition="0.3s ease-in-out"
-                        _hover={{
-                          transform: "scale(1.05)",
-                          textDecoration: "none",
-                        }}
-                      >
-                        <Card
-                          key={child.label + index}
-                          boxShadow={"md"}
-                          bg={child.backgroundColor}
-                          padding={"50px 30px"}
-                          justify="center"
-                          alignItems={"center"}
-                          h="full"
+                  {courseInfo.SpecializedTracks.cloudTrack.quarters.map(
+                    (child) => {
+                      return (
+                        <Link
+                          as={NextLink}
+                          href={"#"}
+                          key={child.title}
+                          textDecoration="none"
+                          transition="0.3s ease-in-out"
+                          _hover={{
+                            transform: "scale(1.05)",
+                            textDecoration: "none",
+                          }}
                         >
-                          <CardBody padding={0}>
-                            <Heading textAlign={"center"} mb={2} color="white">
-                              {child.quarter}
-                            </Heading>
-                            <Text
-                              pt={5}
-                              textAlign={"center"}
-                              color="whiteAlpha.800"
-                              fontWeight={"500"}
-                            >
-                              {child.label}
-                            </Text>
-                          </CardBody>
-                        </Card>
-                      </Link>
-                    );
-                  })}
+                          <Card
+                            boxShadow={"md"}
+                            bg={child.backgroundColor}
+                            padding={"50px 30px"}
+                            justify="center"
+                            alignItems={"center"}
+                            h="full"
+                          >
+                            <CardBody padding={0}>
+                              <Heading
+                                textAlign={"center"}
+                                mb={2}
+                                color="white"
+                              >
+                                {child.title}
+                              </Heading>
+                              <Text
+                                pt={5}
+                                textAlign={"center"}
+                                color="whiteAlpha.900"
+                                fontWeight={"500"}
+                              >
+                                {child.course}
+                              </Text>
+                            </CardBody>
+                          </Card>
+                        </Link>
+                      );
+                    }
+                  )}
+                </SimpleGrid>
+              </MotionBox>
+            </MotionBox>
+            <MotionBox
+              variants={{
+                hidden: {},
+                show: {},
+              }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.25 }}
+            >
+              <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+                <Flex alignItems={"center"} direction="column">
+                  <Heading size="lg">
+                    {courseInfo.SpecializedTracks.IOTTrack.title}
+                  </Heading>
+                  <Text mb={10} mt={3}>
+                    {courseInfo.SpecializedTracks.IOTTrack.description}
+                  </Text>
+                </Flex>
+                <SimpleGrid
+                  templateColumns={{
+                    sm: "1fr",
+                    md: "1fr 1fr",
+                  }}
+                  spacing={8}
+                  mb={50}
+                >
+                  {courseInfo.SpecializedTracks.IOTTrack.quarters.map(
+                    (child) => {
+                      return (
+                        <Link
+                          as={NextLink}
+                          href={"#"}
+                          key={child.title}
+                          textDecoration="none"
+                          transition="0.3s ease-in-out"
+                          _hover={{
+                            transform: "scale(1.05)",
+                            textDecoration: "none",
+                          }}
+                        >
+                          <Card
+                            boxShadow={"md"}
+                            bg={child.backgroundColor}
+                            padding={"50px 30px"}
+                            justify="center"
+                            alignItems={"center"}
+                            h="full"
+                          >
+                            <CardBody padding={0}>
+                              <Heading
+                                textAlign={"center"}
+                                mb={2}
+                                color="white"
+                              >
+                                {child.title}
+                              </Heading>
+                              <Text
+                                pt={5}
+                                textAlign={"center"}
+                                color="whiteAlpha.900"
+                                fontWeight={"500"}
+                              >
+                                {child.course}
+                              </Text>
+                            </CardBody>
+                          </Card>
+                        </Link>
+                      );
+                    }
+                  )}
                 </SimpleGrid>
               </MotionBox>
             </MotionBox>
@@ -421,66 +487,15 @@ const CourseInfo = (props: FlexProps) => {
         </MotionBox>
       </Container>
       <ExtraInfo />
+      <Container
+        maxW={"full"}
+        pb={50}
+        display={{ sm: "none", md: "block" }}
+        padding={0}
+      >
+        <AutoPlay />
+      </Container>
     </Flex>
   );
 };
 export default CourseInfo;
-
-const cardInfo = [
-  {
-    quarter: "Quarter I",
-    label: "CS-101: Object-Oriented Programming using TypeScript",
-    backgroundColor: "#2d69f0",
-  },
-  {
-    quarter: "Quarter II",
-    label:
-      "W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform",
-    backgroundColor: "#dd246e",
-  },
-  {
-    quarter: "Quarter III",
-    label:
-      "$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development",
-    backgroundColor: "#8007e6",
-  },
-];
-
-const blockChainCardInfo = [
-  {
-    quarter: "Quarter IV",
-    label: "W3-351: Developing Smart Contracts and Planet-Scale Web 3.0 Dapps",
-    backgroundColor: "#1727AE",
-  },
-  {
-    quarter: "Quarter V",
-    label:
-      "MV-361: Developing Planet-Scale Open Virtual and Augmented Metaverse Experiences",
-    backgroundColor: "#445BC0",
-  },
-];
-const aiCardInfo = [
-  {
-    quarter: "Quarter IV",
-    label:
-      "AI-351: Developing Planet-Scale Intelligent APIs and Python Programming",
-    backgroundColor: "#074F56",
-  },
-  {
-    quarter: "Quarter V",
-    label: "AI-361: Deep Learning and MLOps",
-    backgroundColor: "#2A3039",
-  },
-];
-const iotCardInfo = [
-  {
-    quarter: "Quarter IV",
-    label: "AC-351: Ambient Computing with Voice Assistants and Matter Devices",
-    backgroundColor: "#BB5536",
-  },
-  {
-    quarter: "Quarter V",
-    label: "AC-361: Embedded Programming using C and Rust",
-    backgroundColor: "#A43821",
-  },
-];

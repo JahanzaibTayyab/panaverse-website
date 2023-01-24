@@ -14,6 +14,12 @@ const theme = extendTheme({
         display: "flex",
         flexDirection: "column",
       },
+      ".slick-slide": {
+        margin: " 0 20px",
+      },
+      ".slick-list": {
+        margin: "0 -10px",
+      },
     }),
   },
   colors: {
