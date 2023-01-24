@@ -52,7 +52,11 @@ const Footer = (props: BoxProps) => {
               textAlign={{ base: "center", md: "left" }}
             >
               © Copyrighted and Designed by{" "}
-              <Link color="blue.500" href="#">
+              <Link
+                color="blue.500"
+                isExternal
+                href="https://www.linkedin.com/in/jahanzaib-tayyab-0b752913a/?originalSubdomain=pk"
+              >
                 Jahanzaib Tayab
               </Link>
             </Text>
