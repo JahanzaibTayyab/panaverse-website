@@ -17,6 +17,7 @@ import { fadeIn, planetVariants } from "@/utils";
 import imageBackground from "@/assets/images/education-shape-05.png";
 import imageBackground2 from "@/assets/images/education-shape-03.png";
 import programStudyImage from "@/assets/images/programStudy.jpeg";
+import { courseInfo } from "@/utils/data";
 
 const programStudy = () => (
   <Container
@@ -58,18 +59,7 @@ const programStudy = () => (
               Achieve Your <span style={{ color: "#145CEB" }}> Goals</span>
             </Heading>
             <Text color="#575757" pt={5}>
-              This curriculum is intended for beginners who want to learn
-              software development from the ground up. The first two quarters
-              are shared by all specialties and are dedicated to studying
-              Object-Oriented Programming and cutting-edge Full-Stack Web 2.0
-              development. It is going to be a fifteen-month-long hybrid program
-              that includes both onsite and online classes and is divided into
-              five quarters of 13 weeks each. The emphasis will be on hands-on
-              learning by educating students to produce projects. To accommodate
-              everyone, courses will be held primarily on weekends or after 6:00
-              p.m. (Pakistan Time) on weekdays. It employs a hybrid teaching
-              format, with core onsite classes complemented by online Zoom
-              laboratories and recorded videos.
+              {courseInfo.ProgramOfStudies}
             </Text>
             <MotionBox pt={5}>
               <Link

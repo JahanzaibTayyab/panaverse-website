@@ -1,15 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Image from "next/image";
-import NextLink from "next/link";
-import {
-  Container,
-  Flex,
-  FlexProps,
-  Box,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
+import { Container, Flex, FlexProps, Heading, Text } from "@chakra-ui/react";
 import Banner from "./sections/banner";
 import Footer from "./sections/footer";
 import { fadeIn } from "@/utils";
@@ -20,6 +11,7 @@ import { TitleText } from "../customText";
 import MotionBox from "./sections/motionBox";
 import ProgramStudy from "./sections/programStudy";
 import ZoomClass from "./sections/zoomClass";
+import { web3Intro } from "@/utils/data";
 
 const Home = (props: FlexProps) => {
   return (
@@ -39,9 +31,9 @@ const Home = (props: FlexProps) => {
           <TitleText
             title={
               <Heading size="2xl" textAlign={"center"} letterSpacing={1.0}>
-                The Program in a Nutshell
+                {web3Intro.programInfo.heading}
                 <Heading size="lg" mt={5} color="red.300">
-                  Earn While You Learn
+                  {web3Intro.programInfo.subHeading}
                 </Heading>
               </Heading>
             }
@@ -59,11 +51,7 @@ const Home = (props: FlexProps) => {
           >
             <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
               <Text fontSize={"lg"} textAlign="center" color="#53545b">
-                In this brand-new type of curriculum, students will learn how to
-                make money and boost exports in the classroom and will begin
-                doing so within six months of the program's beginning. It
-                resembles a cross between a corporate venture and an educational
-                project.
+                {web3Intro.programInfo.description}
               </Text>
             </MotionBox>
           </MotionBox>
