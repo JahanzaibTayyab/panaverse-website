@@ -14,7 +14,7 @@ import javascript from "@/assets/images/javascript.webp";
 import nodejs from "@/assets/images/node.png";
 import reactApp from "@/assets/images/reactApp.svg";
 import git from "@/assets/images/git.webp";
-import css from "@/assets/images/css.webp";
+import css from "@/assets/images/CSS.webp";
 import nextjs from "@/assets/images/next.svg";
 import download from "@/assets/images/download.svg";
 import chakara from "@/assets/images/chakara.png";
