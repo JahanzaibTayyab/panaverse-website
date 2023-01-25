@@ -55,7 +55,7 @@ const Footer = (props: BoxProps) => {
               <Link
                 color="blue.500"
                 isExternal
-                href="https://www.linkedin.com/in/jahanzaib-tayyab-0b752913a/?originalSubdomain=pk"
+                href="https://github.com/jahanzaibtayyab"
               >
                 Jahanzaib Tayab
               </Link>
