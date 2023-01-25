@@ -490,7 +490,7 @@ const CourseInfo = (props: FlexProps) => {
       <Container
         maxW={"full"}
         pb={50}
-        display={{ sm: "none", md: "block" }}
+        display={{ base: "none", md: "block" }}
         padding={0}
       >
         <AutoPlay />

@@ -17,7 +17,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  OrderedList,
 } from "@chakra-ui/react";
 import MotionBox from "@/components/home/sections/motionBox";
 import { fadeIn } from "@/utils";
