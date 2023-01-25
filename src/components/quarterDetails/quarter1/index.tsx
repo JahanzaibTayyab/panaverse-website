@@ -616,6 +616,7 @@ const QuarterOneInfo = (props: FlexProps) => {
               <ListItem>
                 <ListIcon as={AiOutlineCheckCircle} color="green.500" />
                 <Link
+                  isExternal
                   href="https://github.com/panaverse/learn-nextjs/tree/main/assignment00_cloud_to_edge"
                   color={"blue.500"}
                 >
@@ -625,6 +626,7 @@ const QuarterOneInfo = (props: FlexProps) => {
               <ListItem>
                 <ListIcon as={AiOutlineCheckCircle} color="green.500" />
                 <Link
+                  isExternal
                   href="https://github.com/panaverse/learn-nextjs/tree/main/assignment01_todo_app"
                   color={"blue.500"}
                 >
@@ -634,6 +636,7 @@ const QuarterOneInfo = (props: FlexProps) => {
               <ListItem>
                 <ListIcon as={AiOutlineCheckCircle} color="green.500" />
                 <Link
+                  isExternal
                   href=" https://github.com/panaverse/styling-nextjs-projects/tree/main/project00_pricing_ui "
                   color={"blue.500"}
                 >
@@ -645,6 +648,7 @@ const QuarterOneInfo = (props: FlexProps) => {
                 Build a Panaverse DAO Syllabus Website using Next.js 13 given
                 the content from the following document:
                 <Link
+                  isExternal
                   href="https://docs.google.com/document/d/13Z4tMKQmZpMEsOc1Y_qAXbOstRolGIFupHxQFgAFl98/edit?usp=sharing"
                   color={"blue.500"}
                   ml={2}
@@ -653,7 +657,12 @@ const QuarterOneInfo = (props: FlexProps) => {
                 </Link>
                 <br />
                 The best-developed Website will be hosted on
-                <Link color="blue.500" href="www.panaverse.co" ml={2}>
+                <Link
+                  isExternal
+                  color="blue.500"
+                  href="www.panaverse.co"
+                  ml={2}
+                >
                   www.panaverse.co{"  "}
                 </Link>
                 domain.
@@ -663,6 +672,7 @@ const QuarterOneInfo = (props: FlexProps) => {
                 Build a new PIAIC Website using Next.js 13 given the content
                 from the current PIAIC Website and from the following document:
                 <Link
+                  isExternal
                   href="https://docs.google.com/document/d/13Z4tMKQmZpMEsOc1Y_qAXbOstRolGIFupHxQFgAFl98/edit?usp=sharing"
                   color={"blue.500"}
                   ml={2}
@@ -671,7 +681,7 @@ const QuarterOneInfo = (props: FlexProps) => {
                 </Link>
                 <br />
                 The best-developed Website will be hosted on
-                <Link color="blue.500" href=" www.piaic.org" ml={2}>
+                <Link isExternal color="blue.500" href="www.piaic.org" ml={2}>
                   www.piaic.org{"  "}
                 </Link>
                 domain.

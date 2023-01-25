@@ -28,6 +28,13 @@ const AutoPlay = () => {
     arrow: false,
     speed: 4000,
     autoplaySpeed: 4000,
+    draggable: false,
+    focusOnSelect: false,
+    pauseOnDotsHover: false,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    swipe: false,
+    touchMove: false,
     cssEase: "linear",
     responsive: [
       {
@@ -59,6 +66,13 @@ const AutoPlay = () => {
     autoplaySpeed: 4000,
     cssEase: "linear",
     rtl: true,
+    draggable: false,
+    focusOnSelect: false,
+    pauseOnDotsHover: false,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    swipe: false,
+    touchMove: false,
     responsive: [
       {
         breakpoint: 1024,
