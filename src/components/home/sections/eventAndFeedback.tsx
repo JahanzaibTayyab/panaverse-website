@@ -23,30 +23,15 @@ import Feedback from "./feedback";
 const eventAndFeedback = () => (
   <Box bg={"#EDEEF3"} position="relative" overflow="hidden">
     <Container pt={20} pb={90} maxW="container.xl">
-      <MotionBox
-        variants={{
-          hidden: {},
-          show: {},
-        }}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-      >
+      <MotionBox>
         <SimpleGrid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} spacing={12}>
           <Stack>
-            <MotionBox
-              variants={planetVariants("left")}
-              overflow="hidden"
-              mb={45}
-            >
+            <MotionBox overflow="hidden" mb={45}>
               <Heading size="xl">Upcoming Events</Heading>
             </MotionBox>
             <VStack spacing={4} align="stretch">
               {eventArray.map((event, index) => (
-                <MotionBox
-                  key={event.eventName + index}
-                  variants={fadeIn("up", "spring", index * 0.9, 1)}
-                >
+                <MotionBox key={event.eventName + index}>
                   <SimpleGrid spacing={2} templateColumns={{ sm: "1fr 4fr" }}>
                     <Box width={100}>
                       <Flex
@@ -114,7 +99,7 @@ const eventAndFeedback = () => (
             </VStack>
           </Stack>
           <Stack alignItems={"start"}>
-            <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
+            <MotionBox>
               <Heading size="xl" mb={45}>
                 Student's Feedback
               </Heading>

@@ -28,15 +28,7 @@ const shortInfo = () => (
     overflow="hidden"
     maxW="container.xl"
   >
-    <MotionBox
-      variants={{
-        hidden: {},
-        show: {},
-      }}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-    >
+    <MotionBox>
       <Box
         position={"absolute"}
         left={0}
@@ -54,17 +46,12 @@ const shortInfo = () => (
         <Image src={imageBackground2} alt="shape" />
       </Box>
       <SimpleGrid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} spacing={12}>
-        <MotionBox
-          variants={planetVariants("left")}
-          overflow="hidden"
-          position={"relative"}
-          mt={-10}
-        >
+        <MotionBox overflow="hidden" position={"relative"} mt={-10}>
           <Flex objectFit="cover" justify={"center"} alignItems="center">
             <Image src={web} alt="web3" width={500} />
           </Flex>
         </MotionBox>
-        <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
+        <MotionBox>
           <Stack alignItems={"start"}>
             <Heading size="xl">
               What is Web <span style={{ color: "#145CEB" }}> 3.0 </span>

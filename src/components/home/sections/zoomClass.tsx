@@ -27,15 +27,7 @@ const zoomClass = () => (
     overflow="hidden"
     maxW="container.lg"
   >
-    <MotionBox
-      variants={{
-        hidden: {},
-        show: {},
-      }}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-    >
+    <MotionBox>
       <Box position={"absolute"} left={0} top="0%" zIndex={-1}>
         <Image src={imageBackground} alt="shape" />
       </Box>
@@ -52,7 +44,7 @@ const zoomClass = () => (
           </Box>
           <Image src={zoom} alt="web3" />
         </Flex>
-        <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
+        <MotionBox>
           <Stack alignItems={"start"}>
             <Heading size="xl">
               Live Class From <br /> Anywhere Via{" "}

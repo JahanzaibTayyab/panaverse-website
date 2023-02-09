@@ -49,7 +49,7 @@ const Home = (props: FlexProps) => {
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
           >
-            <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+            <MotionBox>
               <Text fontSize={"lg"} textAlign="center" color="#53545b">
                 {web3Intro.programInfo.description}
               </Text>

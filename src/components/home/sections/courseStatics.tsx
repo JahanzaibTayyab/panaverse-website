@@ -20,15 +20,7 @@ import teacherIcon from "@/assets/images/teacher.png";
 const courseStatics = () => {
   return (
     <Container pt={120} pb={30} maxW="container.xl" overflow={"hidden"}>
-      <MotionBox
-        variants={{
-          hidden: {},
-          show: {},
-        }}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-      >
+      <MotionBox>
         <TitleText
           title={
             <Heading size="2xl" textAlign={"center"}>
@@ -40,7 +32,7 @@ const courseStatics = () => {
           You don't have to struggle alone, you've got our assistance and help.
         </Text>
 
-        <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+        <MotionBox>
           <SimpleGrid
             templateColumns={{ sm: "1fr 1fr", md: "1fr 1fr 1fr 1fr" }}
             spacing={8}

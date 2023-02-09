@@ -86,15 +86,7 @@ const CourseInfo = (props: FlexProps) => {
             </Flex>
           </Container>
         </Box>
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-        >
+        <MotionBox>
           <Flex
             justify={"center"}
             pt={70}
@@ -126,15 +118,7 @@ const CourseInfo = (props: FlexProps) => {
             </Text>
           </Flex>
         </MotionBox>
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-        >
+        <MotionBox>
           <Container maxW="7xl">
             <Heading size="lg">
               Core Courses (Common in All Specializations)
@@ -143,7 +127,7 @@ const CourseInfo = (props: FlexProps) => {
               Every participant of the program will start by completing the
               following three core courses:
             </Text>
-            <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+            <MotionBox>
               <SimpleGrid
                 templateColumns={{ sm: "1fr 1fr", md: "1fr 1fr 1fr " }}
                 spacing={8}
@@ -191,21 +175,13 @@ const CourseInfo = (props: FlexProps) => {
             </MotionBox>
           </Container>
         </MotionBox>
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-        >
+        <MotionBox>
           <Container maxW="7xl">
             <Heading size="lg">Specialized Tracks</Heading>
             <Text mb={10} mt={3}>
               {courseInfo.SpecializedTracks.info}
             </Text>
-            <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+            <MotionBox>
               <Flex alignItems={"center"} direction="column">
                 <Heading size="lg">
                   {courseInfo.SpecializedTracks.blockChainTrack.title}
@@ -264,16 +240,8 @@ const CourseInfo = (props: FlexProps) => {
                 )}
               </SimpleGrid>
             </MotionBox>
-            <MotionBox
-              variants={{
-                hidden: {},
-                show: {},
-              }}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-            >
-              <MotionBox variants={fadeIn("up", "tween", 0.8, 1)}>
+            <MotionBox>
+              <MotionBox>
                 <Flex alignItems={"center"} direction="column">
                   <Heading size="lg">
                     {courseInfo.SpecializedTracks.AITrack.title}
@@ -337,16 +305,8 @@ const CourseInfo = (props: FlexProps) => {
                 </SimpleGrid>
               </MotionBox>
             </MotionBox>
-            <MotionBox
-              variants={{
-                hidden: {},
-                show: {},
-              }}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-            >
-              <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+            <MotionBox>
+              <MotionBox>
                 <Flex alignItems={"center"} direction="column">
                   <Heading size="lg">
                     {courseInfo.SpecializedTracks.cloudTrack.title}
@@ -410,16 +370,8 @@ const CourseInfo = (props: FlexProps) => {
                 </SimpleGrid>
               </MotionBox>
             </MotionBox>
-            <MotionBox
-              variants={{
-                hidden: {},
-                show: {},
-              }}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-            >
-              <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+            <MotionBox>
+              <MotionBox>
                 <Flex alignItems={"center"} direction="column">
                   <Heading size="lg">
                     {courseInfo.SpecializedTracks.IOTTrack.title}

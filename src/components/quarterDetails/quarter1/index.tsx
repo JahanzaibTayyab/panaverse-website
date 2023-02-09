@@ -3,7 +3,6 @@ import {
   Container,
   Flex,
   FlexProps,
-  Box,
   Text,
   Heading,
   Accordion,
@@ -36,16 +35,8 @@ const QuarterOneInfo = (props: FlexProps) => {
       {...props}
     >
       <Container maxW="container.md">
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+        <MotionBox>
+          <MotionBox>
             <Flex justify="center" alignItems={"center"} direction="column">
               <Heading position={"relative"} textAlign="center">
                 Detailed Course Syllabus
@@ -62,16 +53,8 @@ const QuarterOneInfo = (props: FlexProps) => {
         </MotionBox>
       </Container>
       <Container maxW="container.md">
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+        <MotionBox>
+          <MotionBox>
             <Heading size="md" mt={5}>
               Course Description
             </Heading>
@@ -86,16 +69,8 @@ const QuarterOneInfo = (props: FlexProps) => {
         </MotionBox>
       </Container>
       <Container mt={10} maxW="container.md">
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+        <MotionBox>
+          <MotionBox>
             <Accordion defaultIndex={[0]} allowMultiple>
               <AccordionItem mb={"30px"}>
                 <AccordionButton
@@ -595,16 +570,8 @@ const QuarterOneInfo = (props: FlexProps) => {
         </MotionBox>
       </Container>
       <Container maxW="container.md">
-        <MotionBox
-          variants={{
-            hidden: {},
-            show: {},
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <MotionBox variants={fadeIn("up", "tween", 0.2, 1)}>
+        <MotionBox>
+          <MotionBox>
             <Heading size="md" mt={5}>
               Quarter Break Assignments and Quizzes
             </Heading>

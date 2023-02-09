@@ -27,15 +27,7 @@ const programStudy = () => (
     overflow="hidden"
     maxW="container.xl"
   >
-    <MotionBox
-      variants={{
-        hidden: {},
-        show: {},
-      }}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-    >
+    <MotionBox>
       <Box
         position={"absolute"}
         left={0}
@@ -53,7 +45,7 @@ const programStudy = () => (
         <Image src={imageBackground2} alt="shape" />
       </Box>
       <SimpleGrid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} spacing={12}>
-        <MotionBox variants={fadeIn("left", "tween", 0.2, 1)}>
+        <MotionBox>
           <Stack>
             <Heading size="xl" textAlign={{ base: "center", md: "left" }}>
               Achieve Your <span style={{ color: "#145CEB" }}> Goals</span>
@@ -86,7 +78,6 @@ const programStudy = () => (
           </Stack>
         </MotionBox>
         <MotionBox
-          variants={planetVariants("right")}
           borderRadius={"40px 4px 40px 4px"}
           objectFit={"cover"}
           overflow="hidden"

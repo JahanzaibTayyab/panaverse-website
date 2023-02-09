@@ -124,15 +124,7 @@ const Banner = () => {
               >
                 <Image src={heroDots} alt="dots" />
               </MotionBox>
-              <MotionBox
-                variants={{
-                  hidden: {},
-                  show: {},
-                }}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.25 }}
-              >
+              <MotionBox>
                 <MotionBox
                   variants={fadeIn("right", "tween", 0.2, 1)}
                   borderRadius={"40px 4px 40px 4px"}
