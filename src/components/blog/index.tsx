@@ -19,7 +19,7 @@ const Blogs = (props: FlexProps) => {
       as="main"
       role="main"
       direction="column"
-      flex="1"
+      flex={1}
       {...props}
       mt={150}
       pb={100}
